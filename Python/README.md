@@ -1,7 +1,7 @@
 
 # Getting started
 
-Download [`python 3.5+`](https://www.activestate.com/activepython) package from ActivePython where embeded Tcl/Tk package [`tkinter`] for us to use.
+Download [`python 3.5+`](https://www.activestate.com/activepython) package from ActivePython where embeded Tcl/Tk package `tkinter` for us to use.
 
 
 The [`tkinter`](https://docs.python.org/3/library/tkinter.html)
@@ -50,8 +50,8 @@ toplevel.eval('set p [loon::plot -x {1 2 3} -y {1 2 3}]')
 Alternatively you can also import the loon namespace in `Tcl`
 
 ```
-root.eval('namespace import loon::*')
-root.eval('set p [plot -x {1 2 3} -y {1 2 3}]')
+toplevel.eval('namespace import loon::*')
+toplevel.eval('set p [plot -x {1 2 3} -y {1 2 3}]')
 ```
 
 # Roadmap
