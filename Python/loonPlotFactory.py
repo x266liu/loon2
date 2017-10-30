@@ -29,7 +29,7 @@ class loonPlotFactory:
                 parent.destroy()    
 '''            
 #python notebook for making some small intro.             
-def loonPlotFactory(factory_tclcmd, factory_path, factory_window_title = "loon plot", parent = None , *arg):
+def loonPlotFactory(factory_tclcmd, factory_path, factory_window_title = "loon plot", parent = None , *args):
    new.toplevel = False
    if parent is None:
       new.toplevel = True
@@ -40,7 +40,7 @@ def loonPlotFactory(factory_tclcmd, factory_path, factory_window_title = "loon p
       empty = ""
       for x in args:
          empty = empty + x
-      cmd = factory_tclcmd + child + empty
+      cmd = factory_tclcmd + child + empty #if I can do that directly by args?
       plot = root.tk.eval(cmd)
    
    except:
@@ -49,15 +49,15 @@ def loonPlotFactory(factory_tclcmd, factory_path, factory_window_title = "loon p
             parent.destroy() #? root.tkdestroy(parent)
          sys.exit(factory_window_title + " could not be created")
       
-      if new.toplevel == True:
-         plot.pack(fill = BOTH, expand = YES)
-         parent.titile()
-         root.tk.eval("bind" + parent + "<FocusIn>" + "+::loon::setLoonInspectorActiveWidget" + plot)
-         root.tk.eval("bind" + parent + "<Control-KeyPress-p>" + )#?
+   if new.toplevel == True:
+      plot.pack(fill = BOTH, expand = YES)
+      parent.titile()
+      root.tk.eval("bind" + parent + "<FocusIn>" + "+::loon::setLoonInspectorActiveWidget" + plot)
+      root.tk.eval("bind" + parent + "<Control-KeyPress-p>" + )#?
          
-      plot = chr(plot)
-      plot.__dict__ = "loon"
-      return plot
+   plot = chr(plot)
+   plot.__dict__ = "loon"
+   return plot
         
 #Tk.call() tcl() in r
 
