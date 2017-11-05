@@ -1,27 +1,36 @@
+from tkinter import tix
 import tkinter
+from tkinter import ttk
+
 import threading
+
+style = ttk.Style()
+style.configure("BW.TLabel", foreground="black", background="blue")
+l1 = ttk.Label(text="Test", style="BW.TLabel")
 
 #change name into tki
 root = tkinter.Tk()
 root.tk.eval('package require loon')
+
+
 #copy loon library into python36/tcl
 root.tk.eval('package require Img')
 root.tk.eval('package require Tk')
 #http://www.posoft.de/html/extTkImg.html download win64
-root.tk.eval('source {C:/Python36/tcl/loon/demos/data/iris.tcl}')
-root.tk.eval('source {C:/Python36/tcl/loon/demos/data/olive.tcl}')
+#root.tk.eval('source {C:/Python36/tcl/loon/demos/data/iris.tcl}')
+#root.tk.eval('source {C:/Python36/tcl/loon/demos/data/olive.tcl}')
 
 
 
-root.tk.eval('namespace import loon::*')
+#root.tk.eval('namespace import loon::*')
 #basic plot
-a = "plot -x {1 2 3} -y {3 2 1}" 
+#a = "plot -x {1 2 3} -y {3 2 1}" 
 args =[" -color ", "{red orange blue} -size ", "{1.4 5.2 4}"]
-b = ""
-for x in args:
-    b = b + x
-print(b)
-c = root.tk.eval(a)
+#b = ""
+#for x in args:
+ #   b = b + x
+#print(b)
+#c = root.tk.eval(a)
 
 #other plots
 #root.tk.eval('set p1 [plot -x $SepalWidth -y $PetalWidth -linkingGroup iris]')

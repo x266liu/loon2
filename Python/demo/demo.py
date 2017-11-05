@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk
 
 
-
+'''
 def calculate(*args): 
     try:
         value = float(feet.get())
@@ -11,6 +11,7 @@ def calculate(*args):
     except ValueError:
         pass
 root = Tk()
+'''
 '''
 #general case
 root.title("Feet to Meters")
@@ -45,9 +46,9 @@ phone = StringVar()
 English = ttk.Radiobutton(root, text='English', variable=phone, value='e') 
 Chinese= ttk.Radiobutton(root, text='Chinese', variable=phone, value='c') 
 Russian= ttk.Radiobutton(root, text='Russian', variable=phone, value='r')
-ci = PhotoImage(file = 'A:/ÑÐ¾¿Éú/pp/c.gif')
-ei = PhotoImage(file = 'A:/ÑÐ¾¿Éú/pp/u.gif')
-ri = PhotoImage(file = 'A:/ÑÐ¾¿Éú/pp/r.gif')
+ci = PhotoImage(file = 'A:/ï¿½Ð¾ï¿½ï¿½ï¿½/pp/c.gif')
+ei = PhotoImage(file = 'A:/ï¿½Ð¾ï¿½ï¿½ï¿½/pp/u.gif')
+ri = PhotoImage(file = 'A:/ï¿½Ð¾ï¿½ï¿½ï¿½/pp/r.gif')
 c = ttk.Radiobutton(root, image = ci, variable=phone, value='c') 
 e = ttk.Radiobutton(root, image = ei, variable=phone, value='e') 
 r = ttk.Radiobutton(root, image = ri, variable=phone, value='r') 
@@ -69,15 +70,44 @@ resultsContents.set('New value to display')
 label.grid(column = 1, row = 1, sticky = E)
 label1.grid(column = 2, row = 2, sticky = W)
 label2 = ttk.Label(root)
-image = PhotoImage(file = 'A:/ÑÐ¾¿Éú/pp/wing.gif') 
+image = PhotoImage(file = 'A:/ï¿½Ð¾ï¿½ï¿½ï¿½/pp/wing.gif') 
 label2['image'] = image
 label2.grid(column = 3, row = 3, columnspan=2, rowspan=2, sticky=W+E+N+S, padx=5, pady=5)
 '''
-
+'''
 #combobox
 countryvar = StringVar()
 country = ttk.Combobox(root, textvariable=countryvar)
-country['values'] = ('ÖÐ¹ú', 'USA', '§²§à§ã§ã§Ú§ñ')
+country['values'] = ('ï¿½Ð¹ï¿½', 'USA', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú§ï¿½')
 country.grid()
 
 root.mainloop()
+'''
+
+import sys
+args = ["a +","- b", "c"]
+str1 = ' '.join(args)
+a = "nm"
+c = "nd"
+q = [a,c]
+m = a +str1
+print(a+" "+c+" "+ str1)
+
+from functools import partial
+
+def multiply(x,y):
+    return x * y
+
+# create a new function that multiplies by 2
+partial(multiply,2,2)
+print(partial(multiply,2,2)())
+'''
+    @param self:
+    @param myParam1:
+    @param myParam2:
+    @return:
+'''
+i = 0
+aa = '.l'
+aai = aa + str(i)
+print(aai)
