@@ -1,7 +1,4 @@
-import tkinter
-from tkinter import Tk
-from tkinter import ttk
-
+from __init__ import *
 
 
 def l_toplevel(path = None):
@@ -14,7 +11,7 @@ def l_toplevel(path = None):
         child = '.l' + str(i) 
         str1 = "winfo exists " + child
         while(bool(root.tk.eval(str1)) - 1):
-            print("1")
+            print(root.tk.eval(str1))
             i = i + 1
             child = '.l' + str(i)   
         path = child

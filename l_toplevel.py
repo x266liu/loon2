@@ -1,10 +1,5 @@
-from tkinter import tix
-import tkinter
-from tkinter import ttk
 
-import threading
-
-
+import __init__
 
 #change name into tki
 root = tkinter.Tk()
