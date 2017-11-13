@@ -1,26 +1,25 @@
 from __init__ import *
 
 
+
 def l_toplevel(path = None):
-    root = tkinter.Tk()
-    root.tk.eval('package require loon')
-    root.tk.eval('namespace import loon::*')        
+    tcl = root.eval
+    tcl("package require loon")
+    tcl('namespace import loon::*')        
     
     if path is None:
         i = 0
         child = '.l' + str(i) 
         str1 = "winfo exists " + child
-        while(bool(root.tk.eval(str1)) - 1):
-            print(root.tk.eval(str1))
+        while(stb(tcl(str1))):
             i = i + 1
             child = '.l' + str(i)   
         path = child
-        print("11")
     
     path = "toplevel " + path
-    tt = str(root.tk.eval(path))
+    tt = str(tcl(path))
     default = "wm" + " " + "iconphoto" + " " + tt + " " + "-default" + " " + "::loon::loonIcon"
-    root.tk.eval(default)
+    tcl(default)
     root.mainloop()
     return tt
     
