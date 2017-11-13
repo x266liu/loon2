@@ -2,6 +2,7 @@ from __init__ import *
 
 
 
+
 def l_toplevel(path = None):
     tcl = root.eval
     tcl("package require loon")
@@ -19,7 +20,7 @@ def l_toplevel(path = None):
     path = "toplevel " + path
     tt = str(tcl(path))
     default = "wm" + " " + "iconphoto" + " " + tt + " " + "-default" + " " + "::loon::loonIcon"
-    tcl(default)
+    tcl(default)  
     root.mainloop()
     return tt
     
