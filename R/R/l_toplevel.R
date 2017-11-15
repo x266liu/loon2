@@ -14,6 +14,5 @@ l_toplevel <- function(path) {
 
     tt <- as.character(tcl('toplevel',path))
     tcl('wm', 'iconphoto', tt, default='::loon::loonIcon')
-    
     return(tt)
 }

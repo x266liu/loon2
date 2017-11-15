@@ -3,25 +3,18 @@ from __init__ import *
 
 
 
-def l_toplevel(path = None):
-    tcl = root.eval
-    tcl("package require loon")
-    tcl('namespace import loon::*')        
-    
+def l_toplevel(path = None):      
     if path is None:
         i = 0
-        child = '.l' + str(i) 
-        str1 = "winfo exists " + child
-        while(stb(tcl(str1))):
+        child = ".l" + str(i) 
+        while(stb(child.winfo_exists())):
             i = i + 1
             child = '.l' + str(i)   
         path = child
     
-    path = "toplevel " + path
-    tt = str(tcl(path))
-    default = "wm" + " " + "iconphoto" + " " + tt + " " + "-default" + " " + "::loon::loonIcon"
-    tcl(default)  
-    root.mainloop()
+    tt = str(toplevel.title(path))
+    
+    tt.wm_iconphotor(default="::loon::loonIcon")
     return tt
     
 
@@ -30,6 +23,7 @@ def l_toplevel(path = None):
 
 if __name__ == "__main__":
     l_toplevel()
+    root.mainloop()
 
 
 
