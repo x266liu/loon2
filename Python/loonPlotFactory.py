@@ -1,7 +1,7 @@
 from __init__ import *
 import l_toplevel
+import l_subwin
 
-root = tkinter.Tk()
 #python notebook for making some small intro.             
 def loonPlotFactory(factory_tclcmd, factory_path, factory_window_title = "loon plot", parent = None , *args):
    ''' Takes factory_tclcmd, factory_path, factory_window_title and parent and etc. arguments
