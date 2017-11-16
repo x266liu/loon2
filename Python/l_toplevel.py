@@ -15,7 +15,7 @@ def l_toplevel(path = None):
     tt = tkinter.Toplevel()
     tt.title(path)
     #tcl("wm", "iconphoto", tt, "-default", img_l)
-    #tt.wm_iconphoto(True,img_l)
+    tt.wm_iconphoto(True,"::loon::loonIcon")
     #tt.iconphoto(-default img_l)
     return tt
     
@@ -24,13 +24,7 @@ def l_toplevel(path = None):
 
 
 if __name__ == "__main__":
-    icon_fname1 = '/Users/x266liu/Desktop/RAY.bmp'
-    print(icon_fname1)
-    img_k = tkinter.PhotoImage(file=icon_fname1)
-    print(img_k)
-    tt= l_toplevel()
-    tt.wm_iconwindow(icon_fname1)
-    #root.withdraw()
+    l_toplevel()
     root.mainloop()
     
 
