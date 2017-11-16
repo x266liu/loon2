@@ -1,7 +1,14 @@
 #example
+import tkinter
 from tkinter import *
 from tkinter import ttk
 
+
+
+root = tkinter.Tk()
+t = tkinter.Toplevel()
+t.title("l0")
+root.mainloop()
 
 '''
 def calculate(*args): 
@@ -83,7 +90,7 @@ country.grid()
 
 root.mainloop()
 '''
-
+'''
 import sys
 args = ["a +","- b", "c"]
 str1 = ' '.join(args)
@@ -101,13 +108,9 @@ def multiply(x,y):
 # create a new function that multiplies by 2
 partial(multiply,2,2)
 print(partial(multiply,2,2)())
-'''
-    @param self:
-    @param myParam1:
-    @param myParam2:
-    @return:
-'''
+
 i = 0
 aa = '.l'
 aai = aa + str(i)
 print(aai)
+'''
