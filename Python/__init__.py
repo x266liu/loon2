@@ -1,9 +1,10 @@
 import tkinter
+import _tkinter
 #from functools import partial
-#import sys #for sys.exit
+import sys #for sys.exit
 import os
 
-
+TclError = _tkinter.TclError
 root = tkinter.Tk()
 tcl = root.tk.call
 root.eval('lappend auto_path /usr/local/Cellar/tcl-tk/8.6.7/lib/loon')

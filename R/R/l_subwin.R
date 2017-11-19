@@ -12,10 +12,9 @@
 #' 
 #' @export
 l_subwin <- function(parent, name="w") {
-    if(is(parent,"tkwin")) {
+  if(is(parent,"tkwin")) {
         parent <- .Tk.ID(parent)
     }
-    
     i <- 0
     child <- paste0(parent, '.', name)
     while(as.logical(tcl('winfo','exists', child))) {       
