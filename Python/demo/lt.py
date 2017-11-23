@@ -22,15 +22,18 @@ root.tk.eval('package require Tk')
 
 
 
-#root.tk.eval('namespace import loon::*')
+root.tk.eval('namespace import loon::*')
 #basic plot
-#a = "plot -x {1 2 3} -y {3 2 1}" 
-args =[" -color ", "{red orange blue} -size ", "{1.4 5.2 4}"]
+a = "plot"
+b = "-x{1 2 3}"
+d = "-y{3 2 1}" 
+args =["-x", "1 2 3", "-y", "1.4 5.2 4"]
 #b = ""
 #for x in args:
  #   b = b + x
 #print(b)
-#c = root.tk.eval(a)
+#c = 
+root.tk.call(a,"-x", "1 2 3", "-y", "1.4 5.2 4")
 
 #other plots
 #root.tk.eval('set p1 [plot -x $SepalWidth -y $PetalWidth -linkingGroup iris]')
