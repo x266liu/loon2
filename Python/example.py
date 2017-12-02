@@ -1,8 +1,6 @@
-
-import __init__
+from __init__ import *
 
 #change name into tki
-root = tkinter.Tk()
 root.tk.eval('package require loon')
 
 
@@ -15,17 +13,17 @@ root.tk.eval('package require Tk')
 
 
 
-#root.tk.eval('namespace import loon::*')
+root.tk.eval('namespace import loon::*')
 #basic plot
-#a = "plot -x {1 2 3} -y {3 2 1}" 
+a = "plot -x {1 2 3} -y {3 2 1} -color orange" 
 args =[" -color ", "{red orange blue} -size ", "{1.4 5.2 4}"]
 #b = ""
 #for x in args:
     #   b = b + x
 #print(b)
-#c = root.tk.eval(a)
-
+#
 #other plots
+
 #root.tk.eval('set p1 [plot -x $SepalWidth -y $PetalWidth -linkingGroup iris]')
 #root.tk.eval('set p2 [plot -x $PetalLength -y $PetalWidth -linkingGroup iris]')
 #root.tk.eval('set p3 [plot -x $SepalLength -y $PetalLength -linkingGroup none]')
@@ -37,7 +35,7 @@ args =[" -color ", "{red orange blue} -size ", "{1.4 5.2 4}"]
 #root.tk.eval('set p [plot -x {0 1 2 3 4 5 6 7} -y {0 1 2 3 4 5 6 7}\
     #   -showScales TRUE -showGuides TRUE]')
 #root.tk.eval('$p layer ids')
-#root.tk.eval('set l_p [$p layer polygon -x {0 1 2 3 3 2.5 1.5 0} -y {5 4.5 4.5 5 7 7 5.5 5.2} -color black -linecolor orange -linewidth 5]')
+root.tk.eval('plot polygon -x {0 1 2 3 3 2.5 1.5 0} -y {5 4.5 4.5 5 7 7 5.5 5.2}')
 
 #root.tk.eval('$p layer use $l_p info states')
 #p <- l_plot(x=0:7, y=0:7, showScales=TRUE, showGuides=TRUE,
@@ -61,8 +59,7 @@ root.tk.eval('set g [graph -nodes [lindex $LG 0] -from [lindex $LG 1]\
       -to [lindex $LG 2] -isDirected [lindex $LG 3]]')
 root.tk.eval('$g navigator add ')
 '''
-print(bool(root.tk.eval("winfo exists .l0")))
+#print(bool(root.tk.eval("winfo exists .l0")))
 
-path = "toplevel .l0"
-tt = list(root.tk.eval(path))
+
 root.mainloop()

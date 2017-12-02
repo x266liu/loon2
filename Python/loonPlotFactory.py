@@ -22,17 +22,18 @@ def loonPlotFactory(factory_tclcmd, factory_path, factory_window_title = "loon p
          tcl("destroy", parent)
       sys.exit(factory_window_title + " could not be created")
    
+   '''
    if new_toplevel == True:
       plot.pack(fill = BOTH, expand = YES)
       parent.titile()
       tcl("bind", parent, "<FocusIn>", "+::loon::setLoonInspectorActiveWidget", plot)
       tcl("bind", parent, "<Control-KeyPress-p>", partial(exportImageDialog, plot)())
       tcl("bind", parent, "<Control-KeyPress-P>", partial(exportImageDialog, plot)())
-         
+   '''   
    plot = str(plot)
    #plot.__dict__ = "loon"
    return plot
         
-parent = l_toplevel()
-loonPlotFactory("::loon::plot", "plot", "loon scatterplot", None, "-x", "1 2 3","-y","3 2 1")
+
+loonPlotFactory("::loon::plot", "plot", "loon scatterplot", None, "-x", "1 2 3","-y","3 2 1", "-color", "orange")
 root.mainloop()
