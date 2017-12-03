@@ -8,7 +8,13 @@ TclError = _tkinter.TclError
 root = tkinter.Tk()
 tcl = root.tk.call
 
-
+def isexist(files):
+    for r,d,f in os.walk("/Library/Tex/texbin"):
+        for files in f:
+            if files == "epstopdf":
+                address = os.path.join(r,files)
+                break
+    return address
 
 
 if sys.platform == "darwin":
@@ -32,8 +38,3 @@ root.eval("package require loon")
 root.eval("package require Img")
 root.eval('namespace import loon::*')  
 
-
-for r,d,f in os.walk("/Library"):
-    for files in f:
-        if files == "epstopdf":
-            print(os.path.join(r,files))

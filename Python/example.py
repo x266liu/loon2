@@ -1,22 +1,37 @@
-from __init__ import *
+#from __init__ import *
 
 #change name into tki
-root.tk.eval('package require loon')
+#root.tk.eval('package require loon')
 
 
 #copy loon library into python36/tcl
-root.tk.eval('package require Img')
-root.tk.eval('package require Tk')
+#root.tk.eval('package require Img')
+#root.tk.eval('package require Tk')
 #http://www.posoft.de/html/extTkImg.html download win64
 #root.tk.eval('source {C:/Python36/tcl/loon/demos/data/iris.tcl}')
 #root.tk.eval('source {C:/Python36/tcl/loon/demos/data/olive.tcl}')
 
 
 
-root.tk.eval('namespace import loon::*')
+#root.tk.eval('namespace import loon::*')
 #basic plot
-a = "plot -x {1 2 3} -y {3 2 1} -color orange" 
-args =[" -color ", "{red orange blue} -size ", "{1.4 5.2 4}"]
+#a = "plot -x {1 2 3} -y {3 2 1} -color orange" 
+#args =[" -color ", "{red orange blue} -size ", "{1.4 5.2 4}"]
+'''
+import os 
+result = []
+name = "epstopdf"
+for root, dirs, files in os.walk("/Library"):
+    print(root)
+    if name in files:
+        result.append(os.path.join(root, name))
+        break
+print(result)
+'''
+a = [0,1,2,3,4,5,6]
+b = 0
+a.remove(0)
+print(a)
 #b = ""
 #for x in args:
     #   b = b + x
@@ -35,7 +50,7 @@ args =[" -color ", "{red orange blue} -size ", "{1.4 5.2 4}"]
 #root.tk.eval('set p [plot -x {0 1 2 3 4 5 6 7} -y {0 1 2 3 4 5 6 7}\
     #   -showScales TRUE -showGuides TRUE]')
 #root.tk.eval('$p layer ids')
-root.tk.eval('plot polygon -x {0 1 2 3 3 2.5 1.5 0} -y {5 4.5 4.5 5 7 7 5.5 5.2}')
+#root.tk.eval('plot polygon -x {0 1 2 3 3 2.5 1.5 0} -y {5 4.5 4.5 5 7 7 5.5 5.2}')
 
 #root.tk.eval('$p layer use $l_p info states')
 #p <- l_plot(x=0:7, y=0:7, showScales=TRUE, showGuides=TRUE,
@@ -61,5 +76,3 @@ root.tk.eval('$g navigator add ')
 '''
 #print(bool(root.tk.eval("winfo exists .l0")))
 
-
-root.mainloop()
