@@ -21,11 +21,12 @@ if sys.platform == "darwin":
     # OS X
     path1 = 'lappend auto_path /usr/local/Cellar/tcl-tk/8.6.7/lib/loon'
     path2 = 'lappend auto_path /usr/local/Cellar/tcl-tk/8.6.7/lib/loon'
-elif sys.platform == "win32":
+elif sys.platform == "win32" or sys.platform == "cygwin":
     #Windows
     path1 = 'lappend auto_path C:/Python35/tcl/loon'
     path2 = 'lappend auto_path C:/Python35/tcl/Img'
-elif sys.platform == "linux" or sys.platform == "linux2":
+elif sys.platform == "linux" or sys.platform == "linux2":#in case python is under 3.3
+    #all platform is linux after python 3.3
     #Linux
     path1 = 'lappend auto_path /usr/local/Cellar/tcl-tk/8.6.7/lib/loon'
     path2 = 'lappend auto_path /usr/local/Cellar/tcl-tk/8.6.7/lib/loon'    
