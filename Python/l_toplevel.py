@@ -1,7 +1,5 @@
 from __init__ import *
 
-
-
 def l_toplevel(path = None):    
     if path is None:
         i = 0
@@ -14,6 +12,7 @@ def l_toplevel(path = None):
     tt = tcl("toplevel", path)
     tcl('wm', 'iconphoto', tt, "-default", '::loon::loonIcon')
     return tt
+
 
 
 
