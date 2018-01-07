@@ -38,7 +38,8 @@ class input1():
         self.master.grid_columnconfigure(0, weight=1)    
         self.button2 = Button(self.frame, text = "Quit", command = root.destroy).pack()
         self.master.geometry("200x200")
-
+        self.widget = None
+        tcl('wm', 'iconphoto', self.master, "-default", '::loon::loonIcon') 
 
 
     def runClick(self):
@@ -54,15 +55,17 @@ class input1():
                     child = '.l' + str(i)   
                 path = child
             
-            tt = tcl("toplevel", path)
-            tcl('wm', 'iconphoto', tt, "-default", '::loon::loonIcon')
-                      
+            tt = Toplevel()
+            tt.title(path)
+            tcl('wm', 'iconphoto', tt, "-default", '::loon::loonIcon') 
+            self.widget = tt
         if self.usertext.get()[:6] == "resize":
+
             width = self.usertext.get()[7:10]
-            height = self.usertext.get()[11:]
+            height = self.usertext.get()[11:14]
             geo = width + "x" + height
             self.myentry = Entry(self.master, textvariable = self.usertext, width = self.master.winfo_width())
-            self.master.geometry(geo)
+            self.widget.geometry(geo)
             
             
 
