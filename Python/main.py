@@ -44,7 +44,7 @@ class input1():
 
     def runClick(self):
         
-
+        #stringvar.get() into string  string.split(" ") into tuples
         if self.usertext.get()[:10] == "l_toplevel":
             path = None
             if path is None:
